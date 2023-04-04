@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.tweteroo.tweteroo.dtos.TweetDTO;
 import com.tweteroo.tweteroo.repository.TweetRepository;
 import com.tweteroo.tweteroo.models.TweetModel;
+import java.util.List;
 
 @Service()
 public class TweetService {
@@ -26,6 +27,10 @@ public class TweetService {
     Pageable filters = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "id"));
     Page<TweetModel> tweetsPage = repository.findAll(filters);
     return tweetsPage;
+  }
+
+  public List<TweetModel> ListAllByUserName(String username) {
+    return repository.findAllByUsernameOrderByIdDesc(username);
   }
 
 }
