@@ -13,6 +13,10 @@ import lombok.Data;
 @Entity
 public class TweetModel {
 
+  public TweetModel() {
+
+  }
+
   public TweetModel(TweetDTO data) {
     this.username = data.username();
     this.tweet = data.tweet();
