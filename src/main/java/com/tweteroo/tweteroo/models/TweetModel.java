@@ -11,11 +11,11 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Tweet {
+public class TweetModel {
 
-  public Tweet(TweetDTO data) {
+  public TweetModel(TweetDTO data) {
     this.username = data.username();
-    this.text = data.text();
+    this.tweet = data.tweet();
   }
 
   @Id
@@ -26,6 +26,6 @@ public class Tweet {
   private String username;
 
   @Column(nullable = false)
-  private String text;
+  private String tweet;
 
 }
